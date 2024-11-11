@@ -1,3 +1,4 @@
+const { log } = require('console');
 const fs  = require('fs');
 
 // to create a new file
@@ -28,4 +29,12 @@ fs.rename("abcd.txt","newFile.txt",function(err){
 fs.unlink("newFile.txt",function(err){
   if(err) console.log(err);
   console.log(`File deleted`);
+})
+
+
+// To create a new folder
+
+fs.mkdir("SubTree", function(err){
+  if(err) console.log(err)
+    console.log(`Folder created`);
 })
