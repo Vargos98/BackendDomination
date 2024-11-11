@@ -38,3 +38,10 @@ fs.mkdir("SubTree", function(err){
   if(err) console.log(err)
     console.log(`Folder created`);
 })
+
+// To read files in a folder 
+
+fs.readdir("SubTree", function(err, files){
+  if(err) console.log(err);
+  console.log(`Files read ${files}`);
+});
