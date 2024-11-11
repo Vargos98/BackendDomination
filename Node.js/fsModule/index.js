@@ -45,3 +45,15 @@ fs.readdir("SubTree", function(err, files){
   if(err) console.log(err);
   console.log(`Files read ${files}`);
 });
+
+
+// To delete a folder and all its contents
+// If he folder consists of multiple files then it wont let the function to delete the files so to prevent that we pass options of 
+// Recursive method which is set to true
+fs.rmdir("SubTree",{recursive:true} ,function(err){
+  if(err) console.log(err);
+  console.log(`Folder deleted`);
+});
+
+
+//Note:  fs.rmdir method is deprecated so in place of that we should use fs.rm() instead.
