@@ -14,3 +14,8 @@ fs.appendFile("abcd.txt","appended data",function(err){
   if(err) console.log(err);
   console.log(`data appended`)
 })
+
+fs.rename("abcd.txt","newFile.txt",function(err){
+  if(err) console.log(err);
+  console.log(`File renamed`);
+})
