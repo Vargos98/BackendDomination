@@ -9,3 +9,8 @@ fs.readFile("abcd.txt",'utf-8',function(err,data){
   if(err) console.log(err);
   console.log(data);
 })
+
+fs.appendFile("abcd.txt","appended data",function(err){
+  if(err) console.log(err);
+  console.log(`data appended`)
+})
