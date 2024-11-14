@@ -5,5 +5,10 @@ app.get('/', (req,res)=>{
     res.send("Hello, world!");
 })
 
+app.get('/about', (req,res)=>{
+    res.send("About page");
+})
+
+
 app.listen(port)
 
