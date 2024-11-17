@@ -1,4 +1,5 @@
 const express = require('express');
+// const flash = require('connect-flash');
 const app = express();
 const port = 3000;
 
@@ -23,6 +24,7 @@ app.get('/check', (req,res, next)=>{
     console.log(req.session.polo);
     
 })
+
 
 
 // Middleware definations 
