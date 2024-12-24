@@ -35,3 +35,18 @@ res.render('index');
 ```
 ```
 
+
+
+How to handle forms in EJS
+1.Whenever we submit a form first check does every field have their respective names 
+2. Does the form have action in it.
+3. Does the backend have its route.
+4. Is the route type right or not.
+
+
+lastly the data inside the form can only recieved in the following way
+
+GET: req.query
+POST : req.body.
+
+
