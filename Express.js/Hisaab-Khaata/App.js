@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname,"public")));
 const PORT =3000;
 
 app.get('/',(req,res)=>{
-  res.send('Hi there');
+  res.render('index');
 })
 
 app.listen(PORT)
