@@ -22,7 +22,7 @@ useEffect(()=>{
           (
             <div key={joke.id} >
             <h3>{joke.title}</h3>
-            <p>{joke.content}</p>
+            <p>{joke.content}</p> 
           </div>
           )
 
