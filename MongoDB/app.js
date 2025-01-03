@@ -7,7 +7,7 @@ const debuglog = require("debug")("development:appconfig");
 // Connect to MongoDB
 mongoose
   .connect(
-    "mongodb+srv://vargos98:9828206Uk@cluster0.p4y9u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://vargos98:9828206Uk@cluster0.p4y9u.mongodb.net/"
   )
   .then(() => {
     console.log("Connected to the database");
@@ -24,18 +24,29 @@ app.get("/", (req, res) => {
 });
 
 // Create user route
-app.get("/create", async (req, res, next) => {
+app.get("/create/:username/:name/:email/:password", async (req, res, next) => {
   try {
+    // Extract user data from req.params
+    const { username, name, email, password } = req.params;
+
+    // Validate required fields
+    if (!username || !name || !email || !password) {
+      return res.status(400).send({ error: "All fields are required" });
+    }
+
+    // Create the user
     const createdUser = await userModel.create({
-      username: "Vargos9288",
-      name: "Umesh bhagat",
-      email: "Vargos9828@gmail.com",
-      password: "password1234",
+      username,
+      name,
+      email,
+      password,
     });
-    debuglog("Created user:", createdUser);
+
+    console.log("Created user:", createdUser);
     res.status(201).send(createdUser);
   } catch (error) {
-    console.error(error) // Pass the error to the error-handling middleware
+    console.error("Error creating user:", error);
+    res.status(500).send({ error: "An error occurred while creating the user" });
   }
 });
 
@@ -61,6 +72,19 @@ app.get("/read", async (req, res, next) => {
     console.error(error) // Pass the error to the error-handling middleware
   }
 });
+
+
+app.get("/update",async (req,res,next)=>{
+  const user = await userModel.findOneAndUpdate({name:"Moni"},{name:"Moni Kumar"}, {new:true})
+  res.send(user);
+})
+
+
+app.get("/delete", async (req,res,next)=>{
+  const user = await userModel.findOneAndDelete({name:"Moni Kumar"})
+  res.send(user);
+})
+
 
 // Error handling middleware
 // app.use((error, req, res, next) => {
