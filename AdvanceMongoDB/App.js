@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const PORT = 4000;
-const User = require('./Models/user.model.js')
+const User = require('./Models/user.model.js');
+const userModel = require('./Models/user.model.js');
 
 
 
@@ -24,6 +25,30 @@ const usersData = [
   { username: "megan_scott", age: 29, email: "megan.scott@example.com", password: "megan@999" },
   { username: "david_moore", age: 36, email: "david.moore@example.com", password: "moore123" },
 ];
+
+const empData = [
+  { username: "lucas_harris", age: 32, email: "lucas.harris@example.com", password: "lucas@123" },
+  { username: "hannah_williams", age: 28, email: "hannah.williams@example.com", password: "hannah_567" },
+  { username: "jason_adams", age: 34, email: "jason.adams@example.com", password: "jason9876" },
+  { username: "olivia_martin", age: 31, email: "olivia.martin@example.com", password: "olivia@abc" },
+  { username: "william_james", age: 29, email: "william.james@example.com", password: "william123" },
+  { username: "natalie_davis", age: 38, email: "natalie.davis@example.com", password: "natalie$456" },
+  { username: "ryan_king", age: 27, email: "ryan.king@example.com", password: "ryan@king99" },
+  { username: "samantha_garcia", age: 35, email: "samantha.garcia@example.com", password: "samantha123" },
+  { username: "zachary_lee", age: 40, email: "zachary.lee@example.com", password: "zachary#98" },
+  { username: "isabella_wilson", age: 25, email: "isabella.wilson@example.com", password: "isabella789" },
+  { username: "matthew_jackson", age: 33, email: "matthew.jackson@example.com", password: "matthew$543" },
+  { username: "grace_hernandez", age: 27, email: "grace.hernandez@example.com", password: "grace_1234" },
+  { username: "elizabeth_miller", age: 31, email: "elizabeth.miller@example.com", password: "elizabeth@567" },
+  { username: "alexander_thomas", age: 30, email: "alexander.thomas@example.com", password: "alexander78" },
+  { username: "bella_taylor", age: 26, email: "bella.taylor@example.com", password: "bella_001" }
+]
+
+
+app.get('/insertEmpData', async(req,res)=>{
+  let data = await userModel.insertMany(empData)
+  res.send(data);
+})
 
 // Insert Sample Data
 app.get('/createMany', async (req, res) => {
