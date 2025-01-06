@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = 4000;
 const User = require('./Models/user.model.js')
-// User Schema
 
 
 
