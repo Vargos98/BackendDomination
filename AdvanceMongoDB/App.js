@@ -4,12 +4,6 @@ const app = express();
 const PORT = 4000;
 const User = require('./Models/user.model.js')
 // User Schema
-const userSchema = new mongoose.Schema({
-  username: { type: String, required: true },
-  age: { type: Number, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: true },
-});
 
 
 
