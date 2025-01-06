@@ -23,11 +23,7 @@ const usersData = [
   { username: "anna_taylor", age: 24, email: "anna.taylor@example.com", password: "taylor_67" },
   { username: "chris_evans", age: 33, email: "chris.evans@example.com", password: "chris2024" },
   { username: "megan_scott", age: 29, email: "megan.scott@example.com", password: "megan@999" },
-  { username: "david_moore", age: 36, email: "david.moore@example.com", password: "moore123" },
-];
-
-const empData = [
-  { username: "lucas_harris", age: 32, email: "lucas.harris@example.com", password: "lucas@123" },
+  { username: "david_moore", age: 36, email: "david.moore@example.com", password: "moore123" }, { username: "lucas_harris", age: 32, email: "lucas.harris@example.com", password: "lucas@123" },
   { username: "hannah_williams", age: 28, email: "hannah.williams@example.com", password: "hannah_567" },
   { username: "jason_adams", age: 34, email: "jason.adams@example.com", password: "jason9876" },
   { username: "olivia_martin", age: 31, email: "olivia.martin@example.com", password: "olivia@abc" },
@@ -42,13 +38,15 @@ const empData = [
   { username: "elizabeth_miller", age: 31, email: "elizabeth.miller@example.com", password: "elizabeth@567" },
   { username: "alexander_thomas", age: 30, email: "alexander.thomas@example.com", password: "alexander78" },
   { username: "bella_taylor", age: 26, email: "bella.taylor@example.com", password: "bella_001" }
-]
+];
 
 
-app.get('/insertEmpData', async(req,res)=>{
-  let data = await userModel.insertMany(empData)
-  res.send(data);
-})
+
+
+// app.get('/insertEmpData', async(req,res)=>{
+//   let data = await userModel.insertMany(empData)
+//   res.send(data);
+// })
 
 // Insert Sample Data
 app.get('/createMany', async (req, res) => {
