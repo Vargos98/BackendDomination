@@ -36,7 +36,10 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-});
+  
+}, {timestamps: true}
+
+);
 
 
 function validateModel(data){
