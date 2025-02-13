@@ -969,7 +969,7 @@
   },
   {
     "id": 122,
-    "first_name": "Gill",
+    "first_name": "nonu",
     "last_name": "Alvis",
     "email": "galvis3d@washingtonpost.com",
     "gender": "Female",
@@ -8030,13 +8030,5 @@
     "gender": "Male",
     "job_title": "Frontend-engineer",
     "id": 1004
-  },
-  {
-    "first_name": "Ashish",
-    "last_name": "Kumar",
-    "email": "vas98@gmail.com",
-    "gender": "Male",
-    "job_title": "Frontend-engineer",
-    "id": 1005
   }
 ]
