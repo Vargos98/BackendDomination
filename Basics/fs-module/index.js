@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-
+// Writing a file
 // This is Synchronous method 
       // fs.writeFileSync("./test.txt","this is the first input");
 
@@ -10,8 +10,8 @@ const fs = require("fs");
         //   console.log(err);
         // })
 
-
-// Now reading the file Sync way but the result is being stored in an variable named result
+// Reading a file
+// Now reading the file Sync way but the result is being stored in an variable named result and then it returns it
 
         // const result = fs.readFileSync("./contact.txt","utf-8")
 
@@ -28,4 +28,7 @@ const fs = require("fs");
       // })
 
 
-//
+// Appending a file
+
+let result = fs.appendFileSync("text.txt", "Hey there\n" );
+console.log(result)
