@@ -30,5 +30,13 @@ const fs = require("fs");
 
 // Appending a file
 
-let result = fs.appendFileSync("text.txt", "Hey there\n" );
-console.log(result)
+      // let result = fs.appendFileSync("text.txt", "Hey there\n" );
+      // console.log(result)
+
+
+
+// Checking no.of cpu's 
+
+      // const os  = require("os");
+
+      // console.log(os.cpus().length);
