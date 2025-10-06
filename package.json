@@ -1,0 +1,24 @@
+{
+  "name": "backenddomination",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Vargos98/BackendDomination#readme",
+  "bugs": {
+    "url": "https://github.com/Vargos98/BackendDomination/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vargos98/BackendDomination.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "Express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.13.2"
+  }
+}
