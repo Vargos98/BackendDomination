@@ -15,16 +15,20 @@ const app = express();
 const PORT = 4000;
 const users = require("./MOCK_DATA.json")
 
-app.route("/api/users/:id").get((req,res)=>{
+app.route("/api/users/:id").get((req, res) => {
   const id = Number(req.params.id);
-  const user = users.find(user=> user.id === id)
+  const user = users.find(user => user.id === id)
   return res.json(user);
 })
-.patch((req,res)=>{
-  return res.json({status:"Pending"});
-})
-.delete((req,res)=>{
-  return res.json({status:"Pending"})
+  .patch((req, res) => {
+    return res.json({ status: "Pending" });
+  })
+  .delete((req, res) => {
+    return res.json({ status: "Pending" })
+  })
+  
+app.post("/api/users", (req, res) => {
+  return res.json({ status: "Pending" })
 })
 
 
@@ -45,7 +49,7 @@ app.get("/users", (req, res) => {
 
 // GET/users - list all users
 // This route will provide an json response
-app.get("/api/users", (req,res)=>{
+app.get("/api/users", (req, res) => {
   return res.json(users);
 })
 // GET/users/1 - Get the user with ID 1
@@ -55,6 +59,6 @@ app.get("/api/users", (req,res)=>{
 
 
 
-app.listen(PORT,()=>{
+app.listen(PORT, () => {
   console.log(`Server running on: ${PORT}`)
 })
