@@ -20,7 +20,7 @@ app.route("/api/users/:id").get((req,res)=>{
   const user = users.find(user=> user.id === id)
   return res.json(user);
 })
-.put((req,res)=>{
+.patch((req,res)=>{
   return res.json({status:"Pending"});
 })
 .delete((req,res)=>{
