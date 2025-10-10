@@ -14,7 +14,7 @@ const express = require('express');
 const fs = require('fs')
 const app = express();
 const PORT = 4000;
-const users = require("./MOCK_DATA.json")
+let users = require("./MOCK_DATA.json")
 
 //Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -23,13 +23,29 @@ app.route("/api/users/:id")
   .get((req, res) => {
     const id = Number(req.params.id);
     const user = users.find(user => user.id === id)
-    return res.json(user);
+    return res.json(user || {message:"User not found!"});
   })
   .patch((req, res) => {
-    return res.json({ status: "Pending" });
+    const id = Number(req.params.id)
+    const user = users.find(user => user.id  === id);
+    if(!user) return res.json({message:"User not found"});
+    
+    // return res.json({ status: "Pending" });
+    Object.assign(user,req.body)
+    fs.writeFile('./MOCK_DATA.json', JSON.stringify(users), (err)=>{
+      if(err) return res.json("Error saving data");
+      return res.json({status:"Success", updatedUser: user});
+    })
+
   })
   .delete((req, res) => {
-    return res.json({ status: "Pending" })
+    const id = Number(req.params.id);
+    users = users.filter(user=> user.id !== id);
+    fs.writeFile('./MOCK_DATA.json', JSON.stringify(users),()=>{
+      res.json({message:"User deleted"})
+    })
+
+    // return res.json({ status: "Pending" })
   })
 
 app.post("/api/users", (req, res) => {
