@@ -19,11 +19,12 @@ const users = require("./MOCK_DATA.json")
 //Middleware
 app.use(express.urlencoded({ extended: false }));
 
-app.route("/api/users/:id").get((req, res) => {
-  const id = Number(req.params.id);
-  const user = users.find(user => user.id === id)
-  return res.json(user);
-})
+app.route("/api/users/:id")
+  .get((req, res) => {
+    const id = Number(req.params.id);
+    const user = users.find(user => user.id === id)
+    return res.json(user);
+  })
   .patch((req, res) => {
     return res.json({ status: "Pending" });
   })
