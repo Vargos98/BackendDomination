@@ -16,8 +16,17 @@ const app = express();
 const PORT = 4000;
 let users = require("./MOCK_DATA.json")
 
-//Middleware
+//Middleware TO PARSE url encoded data and json data
 app.use(express.urlencoded({ extended: false }));
+
+app.use((req,res,next)=>{
+  fs.appendFile('log.txt', `${Date.now()}:${req.ip} : ${req.method}: ${req.path}\n`, (err,data)=>{
+    if(err) console.log("Error logging data")
+    else console.log("Data logged")
+  next();
+  })
+  
+})
 
 app.route("/api/users/:id")
   .get((req, res) => {
