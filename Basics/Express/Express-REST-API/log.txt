@@ -7,3 +7,5 @@
 1760425161224: DELETE: /api/users/1003
 1760425232412: GET: /api/users/
 1760425258237:::1 : GET: /api/users/
+1760861813126:::1 : GET: /api/users
+1760861813310:::1 : GET: /favicon.ico
